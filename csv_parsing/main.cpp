@@ -27,7 +27,6 @@ int main(int argc, const char * argv[]) {
     int cols{};
     int currentRow{};
     int currentCol{};
-    double number;
     
     try {
         //INITIAL CHECK: OPEN/EMPTY, COLUMNS, ROWS
@@ -55,9 +54,9 @@ int main(int argc, const char * argv[]) {
         //IF ALL IS WELL, WE PROCEED
         --rows;
         ++cols;
-        std::cout << "The text file contains " << cols <<
-                        " columns(s) of data" << std::endl;
-        std::cout << "The text file contains " << rows <<
+        std::cout << "This .csv file contains " << cols <<
+                        " columns(s)";
+        std::cout << " and " << rows <<
                             " row(s) of data" << std::endl;
         
         f.clear();
@@ -67,7 +66,7 @@ int main(int argc, const char * argv[]) {
         for(int i = 0; i < cols-1; ++i){
             getline(f, tempName, ',');
             names.push_back(tempName);
-            std::cout << names[i];
+            //std::cout << names[i];
         }
         getline(f, tempName, '\n');
         names.push_back(tempName);
@@ -89,14 +88,14 @@ int main(int argc, const char * argv[]) {
                     throw err;
                 }
                 numbersRow.push_back(tempNum); //record number into vector
-                std::cout << std::endl << std::setprecision(10) << "Number read: " << tempNum;
+                //std::cout << std::endl << std::setprecision(10) << "Number read: " << tempNum;
                 tempChar = f.get(); //get next character
-                std::cout << std::endl << "Char read: " << tempChar;
+                //std::cout << std::endl << "Char read: " << tempChar;
                 if(tempChar != ',' && tempChar != '\n' && tempChar != '\377'){
                     err.set(DELIM_ERR, currentRow, currentCol);
                     throw err;
                 }
-                std::cout << std::endl << "currentCol: " << currentCol;
+                //std::cout << std::endl << "currentCol: " << currentCol;
                 if((tempChar == '\n' || tempChar == '\377') && currentCol != cols){
                     err.set(END_OF_ROW_ERR, currentRow, currentCol);
                     throw err;
@@ -105,7 +104,7 @@ int main(int argc, const char * argv[]) {
             }
             numbers.push_back(numbersRow);
             numbersRow.clear();
-            std::cout << std::endl << "currentRow: " << currentRow;
+            //std::cout << std::endl << "currentRow: " << currentRow;
         }
         
         //CONSOLE OUTPUT
@@ -120,6 +119,7 @@ int main(int argc, const char * argv[]) {
             }
             std::cout << std::endl;
         }
+        std::cout << std::endl;
         
     } catch (ErrorHandler err) {
         std::cout << std::endl;
