@@ -31,7 +31,10 @@ int main(int argc, const char * argv[]) {
     
     try {
         //INITIAL CHECK: OPEN/EMPTY, COLUMNS, ROWS
-        if (f.is_open() == 0) throw err;
+        if (f.is_open() == 0){
+            err.set(FILEOPEN_ERR);
+            throw err;
+        }
         while(getline(f, tempName, '\n')){
             ++rows;
         }
@@ -46,7 +49,7 @@ int main(int argc, const char * argv[]) {
             if(tempChar == ',') ++cols;
         }
         if(cols == 0){
-            err.set(FILEOPEN_ERR);
+            err.set(EMPTY_FILE_ERR);
             throw err;
         }
         //IF ALL IS WELL, WE PROCEED
