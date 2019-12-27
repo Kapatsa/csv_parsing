@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25011C17239E665700F83055 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25011C16239E665700F83055 /* main.cpp */; };
+		25FF0B9023B64872003F2034 /* errorHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25FF0B8E23B64872003F2034 /* errorHandler.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,10 @@
 
 /* Begin PBXFileReference section */
 		25011C13239E665700F83055 /* csv_parsing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = csv_parsing; sourceTree = BUILT_PRODUCTS_DIR; };
-		25011C16239E665700F83055 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		25011C16239E665700F83055 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/davidkapatsa/Documents/Programming/4th_year/csv_parsing/csv_parsing/main.cpp; sourceTree = "<absolute>"; };
+		257C8847239E843F004E9B25 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = input.txt; path = ../../input.txt; sourceTree = "<group>"; };
+		25FF0B8E23B64872003F2034 /* errorHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = errorHandler.cpp; sourceTree = "<group>"; };
+		25FF0B8F23B64872003F2034 /* errorHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = errorHandler.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				25011C16239E665700F83055 /* main.cpp */,
+				257C8847239E843F004E9B25 /* input.txt */,
+				25FF0B8E23B64872003F2034 /* errorHandler.cpp */,
+				25FF0B8F23B64872003F2034 /* errorHandler.hpp */,
 			);
 			path = csv_parsing;
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25011C17239E665700F83055 /* main.cpp in Sources */,
+				25FF0B9023B64872003F2034 /* errorHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
